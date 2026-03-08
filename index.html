@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FreshBox — Доставка здорового питания</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome для иконок -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4caf50',
+                        'primary-dark': '#388e3c',
+                        'primary-light': '#e8f5e9',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+    </style>
+</head>
+<body class="font-sans text-gray-800">
+
+    <!-- ===== ХЕДЕР ===== -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white shadow-md">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+            <!-- Логотип -->
+            <a href="#hero" class="flex items-center gap-2 text-primary font-bold text-2xl">
+                <i class="fas fa-leaf"></i>
+                <span>FreshBox</span>
+            </a>
+
+            <!-- Навигация (десктоп) -->
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-600">
+                <a href="#about" class="hover:text-primary transition-colors">О нас</a>
+                <a href="#menu" class="hover:text-primary transition-colors">Меню</a>
+                <a href="#advantages" class="hover:text-primary transition-colors">Преимущества</a>
+                <a href="#contact" class="hover:text-primary transition-colors">Контакты</a>
+            </nav>
+
+            <!-- Кнопка CTA -->
+            <a href="#order"
+               class="hidden md:inline-block bg-primary hover:bg-primary-dark text-white font-semibold px-5 py-2 rounded-full transition-colors">
+                Заказать
+            </a>
+
+            <!-- Бургер (мобайл) -->
+            <button id="burger" class="md:hidden text-gray-600 text-2xl" aria-label="Меню">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Мобильное меню -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t px-4 py-4 flex flex-col gap-4 text-sm font-medium text-gray-600">
+            <a href="#about" class="hover:text-primary transition-colors">О нас</a>
+            <a href="#menu" class="hover:text-primary transition-colors">Меню</a>
+            <a href="#advantages" class="hover:text-primary transition-colors">Преимущества</a>
+            <a href="#contact" class="hover:text-primary transition-colors">Контакты</a>
+            <a href="#order" class="bg-primary text-white text-center font-semibold px-5 py-2 rounded-full">Заказать</a>
+        </div>
+    </header>
+
+    <!-- ===== HERO ===== -->
+    <section id="hero" class="pt-24 bg-primary-light">
+        <div class="max-w-6xl mx-auto px-4 py-20 flex flex-col md:flex-row items-center gap-12">
+            <!-- Текст -->
+            <div class="flex-1 text-center md:text-left">
+                <span class="inline-block bg-primary text-white text-xs font-semibold px-3 py-1 rounded-full mb-4 uppercase tracking-wide">
+                    Свежо. Вкусно. Полезно.
+                </span>
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-6">
+                    Здоровое питание<br>прямо к вашей двери
+                </h1>
+                <p class="text-gray-600 text-lg mb-8 max-w-lg">
+                    Ежедневные рационы от шеф-повара — без сахара, глютена и консервантов.
+                    Доставка по городу за 60 минут.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                    <a href="#order"
+                       class="bg-primary hover:bg-primary-dark text-white font-semibold px-8 py-3 rounded-full transition-colors text-center">
+                        Попробовать пробный день
+                    </a>
+                    <a href="#menu"
+                       class="border border-primary text-primary hover:bg-primary hover:text-white font-semibold px-8 py-3 rounded-full transition-colors text-center">
+                        Смотреть меню
+                    </a>
+                </div>
+            </div>
+
+            <!-- Иллюстрация (плейсхолдер) -->
+            <div class="flex-1 flex justify-center">
+                <div class="bg-white rounded-3xl shadow-xl w-72 h-72 flex flex-col items-center justify-center text-primary gap-4">
+                    <i class="fas fa-bowl-food text-8xl"></i>
+                    <span class="text-gray-500 text-sm">Свежие блюда каждый день</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== О ПРОЕКТЕ ===== -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center gap-12">
+            <!-- Иллюстрация -->
+            <div class="flex-1 flex justify-center">
+                <div class="bg-primary-light rounded-3xl w-80 h-80 flex flex-col items-center justify-center text-primary gap-4 shadow">
+                    <i class="fas fa-seedling text-8xl"></i>
+                    <span class="text-gray-500 text-sm">Только натуральное</span>
+                </div>
+            </div>
+
+            <!-- Текст -->
+            <div class="flex-1">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">О нашем сервисе</h2>
+                <p class="text-gray-600 mb-4">
+                    FreshBox — это сервис доставки готовых блюд и рационов питания, созданный для людей,
+                    которые хотят питаться правильно, но не имеют времени на готовку.
+                </p>
+                <p class="text-gray-600 mb-6">
+                    Наша команда диетологов и шеф-поваров разрабатывает сбалансированные рационы:
+                    от низкокалорийного питания до спортивного и детокс-программ.
+                    Все продукты проходят строгий контроль качества.
+                </p>
+                <ul class="space-y-3">
+                    <li class="flex items-center gap-3 text-gray-700">
+                        <i class="fas fa-check-circle text-primary text-lg"></i>
+                        Ингредиенты от проверенных фермерских хозяйств
+                    </li>
+                    <li class="flex items-center gap-3 text-gray-700">
+                        <i class="fas fa-check-circle text-primary text-lg"></i>
+                        Рационы разработаны сертифицированными диетологами
+                    </li>
+                    <li class="flex items-center gap-3 text-gray-700">
+                        <i class="fas fa-check-circle text-primary text-lg"></i>
+                        Упаковка из экологичных материалов
+                    </li>
+                    <li class="flex items-center gap-3 text-gray-700">
+                        <i class="fas fa-check-circle text-primary text-lg"></i>
+                        Доставка 7 дней в неделю
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== МЕНЮ / РАЦИОНЫ ===== -->
+    <section id="menu" class="py-20 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-3">Наши рационы</h2>
+                <p class="text-gray-500">Выберите программу питания, которая подходит именно вам</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Карточка 1 -->
+                <div class="bg-white rounded-2xl shadow hover:shadow-lg transition-shadow overflow-hidden">
+                    <div class="bg-green-100 h-40 flex items-center justify-center">
+                        <i class="fas fa-apple-whole text-6xl text-primary"></i>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs font-semibold text-primary uppercase tracking-wide">Детокс</span>
+                        <h3 class="text-xl font-bold text-gray-900 mt-1 mb-2">Очищение</h3>
+                        <p class="text-gray-500 text-sm mb-4">
+                            7-дневная программа для очищения организма. Лёгкие блюда на основе овощей,
+                            зелёных смузи и цельнозерновых круп.
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-primary font-bold text-lg">от 1 200 ₽/день</span>
+                            <a href="#order" class="bg-primary-light text-primary font-semibold px-4 py-2 rounded-full text-sm hover:bg-primary hover:text-white transition-colors">
+                                Выбрать
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Карточка 2 -->
+                <div class="bg-white rounded-2xl shadow hover:shadow-lg transition-shadow overflow-hidden border-2 border-primary relative">
+                    <div class="absolute top-4 right-4 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full">Хит</div>
+                    <div class="bg-green-100 h-40 flex items-center justify-center">
+                        <i class="fas fa-dumbbell text-6xl text-primary"></i>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs font-semibold text-primary uppercase tracking-wide">Спорт</span>
+                        <h3 class="text-xl font-bold text-gray-900 mt-1 mb-2">Активный</h3>
+                        <p class="text-gray-500 text-sm mb-4">
+                            Высокобелковый рацион для спортсменов и активных людей. Поддерживает мышечную
+                            массу и восстановление после тренировок.
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-primary font-bold text-lg">от 1 500 ₽/день</span>
+                            <a href="#order" class="bg-primary text-white font-semibold px-4 py-2 rounded-full text-sm hover:bg-primary-dark transition-colors">
+                                Выбрать
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Карточка 3 -->
+                <div class="bg-white rounded-2xl shadow hover:shadow-lg transition-shadow overflow-hidden">
+                    <div class="bg-green-100 h-40 flex items-center justify-center">
+                        <i class="fas fa-heart text-6xl text-primary"></i>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs font-semibold text-primary uppercase tracking-wide">Похудение</span>
+                        <h3 class="text-xl font-bold text-gray-900 mt-1 mb-2">Баланс</h3>
+                        <p class="text-gray-500 text-sm mb-4">
+                            Сбалансированный низкокалорийный рацион для плавного снижения веса.
+                            Без жёстких ограничений — только польза и вкус.
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-primary font-bold text-lg">от 1 100 ₽/день</span>
+                            <a href="#order" class="bg-primary-light text-primary font-semibold px-4 py-2 rounded-full text-sm hover:bg-primary hover:text-white transition-colors">
+                                Выбрать
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ПРЕИМУЩЕСТВА ===== -->
+    <section id="advantages" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-3">Почему выбирают FreshBox</h2>
+                <p class="text-gray-500">Мы продумали каждую деталь, чтобы питание было удобным и полезным</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="text-center p-6 rounded-2xl bg-primary-light hover:shadow-md transition-shadow">
+                    <div class="text-primary text-4xl mb-4"><i class="fas fa-clock"></i></div>
+                    <h3 class="font-bold text-gray-900 mb-2">Доставка за 60 мин</h3>
+                    <p class="text-gray-500 text-sm">Горячие блюда привезём вовремя, 7 дней в неделю</p>
+                </div>
+                <div class="text-center p-6 rounded-2xl bg-primary-light hover:shadow-md transition-shadow">
+                    <div class="text-primary text-4xl mb-4"><i class="fas fa-flask"></i></div>
+                    <h3 class="font-bold text-gray-900 mb-2">Без химии</h3>
+                    <p class="text-gray-500 text-sm">Никаких консервантов, усилителей вкуса и красителей</p>
+                </div>
+                <div class="text-center p-6 rounded-2xl bg-primary-light hover:shadow-md transition-shadow">
+                    <div class="text-primary text-4xl mb-4"><i class="fas fa-user-doctor"></i></div>
+                    <h3 class="font-bold text-gray-900 mb-2">От диетолога</h3>
+                    <p class="text-gray-500 text-sm">Рационы разработаны под разные цели и состояние здоровья</p>
+                </div>
+                <div class="text-center p-6 rounded-2xl bg-primary-light hover:shadow-md transition-shadow">
+                    <div class="text-primary text-4xl mb-4"><i class="fas fa-recycle"></i></div>
+                    <h3 class="font-bold text-gray-900 mb-2">Эко-упаковка</h3>
+                    <p class="text-gray-500 text-sm">Вся упаковка биоразлагаемая и перерабатываемая</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ФОРМА ЗАКАЗА ===== -->
+    <section id="order" class="py-20 bg-primary-light">
+        <div class="max-w-xl mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold text-gray-900 mb-3">Попробуйте пробный день</h2>
+            <p class="text-gray-500 mb-8">Оставьте заявку — менеджер свяжется с вами в течение 15 минут</p>
+
+            <form class="bg-white rounded-2xl shadow-lg p-8 text-left space-y-5">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Ваше имя</label>
+                    <input type="text" placeholder="Иван Иванов"
+                           class="w-full border border-gray-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Телефон</label>
+                    <input type="tel" placeholder="+7 (___) ___-__-__"
+                           class="w-full border border-gray-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Программа питания</label>
+                    <select class="w-full border border-gray-300 rounded-xl px-4 py-3 text-sm text-gray-600 focus:outline-none focus:ring-2 focus:ring-primary">
+                        <option value="">Выберите программу</option>
+                        <option>Очищение (Детокс)</option>
+                        <option>Активный (Спорт)</option>
+                        <option>Баланс (Похудение)</option>
+                    </select>
+                </div>
+                <button type="submit"
+                        class="w-full bg-primary hover:bg-primary-dark text-white font-semibold py-3 rounded-full transition-colors">
+                    Оставить заявку
+                </button>
+                <p class="text-xs text-gray-400 text-center">
+                    Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности
+                </p>
+            </form>
+        </div>
+    </section>
+
+    <!-- ===== ФУТЕР ===== -->
+    <footer id="contact" class="bg-gray-900 text-gray-300 py-12">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
+                <!-- Логотип и описание -->
+                <div class="col-span-1 lg:col-span-2">
+                    <div class="flex items-center gap-2 text-white font-bold text-2xl mb-3">
+                        <i class="fas fa-leaf text-primary"></i>
+                        <span>FreshBox</span>
+                    </div>
+                    <p class="text-sm text-gray-400 max-w-xs">
+                        Сервис доставки здорового питания. Готовим с любовью, доставляем с заботой.
+                    </p>
+                </div>
+
+                <!-- Навигация -->
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Навигация</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#about" class="hover:text-primary transition-colors">О нас</a></li>
+                        <li><a href="#menu" class="hover:text-primary transition-colors">Меню</a></li>
+                        <li><a href="#advantages" class="hover:text-primary transition-colors">Преимущества</a></li>
+                        <li><a href="#order" class="hover:text-primary transition-colors">Заказать</a></li>
+                    </ul>
+                </div>
+
+                <!-- Контакты -->
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Контакты</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex items-center gap-2">
+                            <i class="fas fa-phone text-primary"></i>
+                            <a href="tel:+78001234567" class="hover:text-primary transition-colors">8 800 123-45-67</a>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fas fa-envelope text-primary"></i>
+                            <a href="mailto:hello@freshbox.ru" class="hover:text-primary transition-colors">hello@freshbox.ru</a>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fas fa-location-dot text-primary"></i>
+                            <span>Москва, ул. Здоровая, 1</span>
+                        </li>
+                    </ul>
+
+                    <!-- Соцсети -->
+                    <div class="flex gap-4 mt-5">
+                        <a href="#" class="text-gray-400 hover:text-primary text-xl transition-colors" aria-label="ВКонтакте">
+                            <i class="fab fa-vk"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-primary text-xl transition-colors" aria-label="Telegram">
+                            <i class="fab fa-telegram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-primary text-xl transition-colors" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-primary text-xl transition-colors" aria-label="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 pt-6 text-center text-xs text-gray-500">
+                &copy; 2026 FreshBox. Все права защищены.
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== Мобильное меню: скрипт ===== -->
+    <script>
+        const burger = document.getElementById('burger');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        burger.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Закрывать меню при клике на ссылку
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
