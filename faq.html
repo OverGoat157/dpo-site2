@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ — FreshBox</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4caf50',
+                        'primary-dark': '#388e3c',
+                        'primary-light': '#e8f5e9',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+        .faq-answer.open {
+            max-height: 500px;
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800">
+
+    <!-- ===== ХЕДЕР ===== -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white shadow-md">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-2 text-primary font-bold text-2xl">
+                <i class="fas fa-leaf"></i>
+                <span>FreshBox</span>
+            </a>
+
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-600">
+                <a href="index.html" class="hover:text-primary transition-colors">Главная</a>
+                <a href="index.html#menu" class="hover:text-primary transition-colors">Меню</a>
+                <a href="faq.html" class="text-primary font-semibold">FAQ</a>
+                <a href="contacts.html" class="hover:text-primary transition-colors">Контакты</a>
+            </nav>
+
+            <a href="index.html#order"
+               class="hidden md:inline-block bg-primary hover:bg-primary-dark text-white font-semibold px-5 py-2 rounded-full transition-colors">
+                Заказать
+            </a>
+
+            <button id="burger" class="md:hidden text-gray-600 text-2xl" aria-label="Меню">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t px-4 py-4 flex flex-col gap-4 text-sm font-medium text-gray-600">
+            <a href="index.html" class="hover:text-primary transition-colors">Главная</a>
+            <a href="index.html#menu" class="hover:text-primary transition-colors">Меню</a>
+            <a href="faq.html" class="text-primary font-semibold">FAQ</a>
+            <a href="contacts.html" class="hover:text-primary transition-colors">Контакты</a>
+            <a href="index.html#order" class="bg-primary text-white text-center font-semibold px-5 py-2 rounded-full">Заказать</a>
+        </div>
+    </header>
+
+    <!-- ===== ЗАГОЛОВОК СТРАНИЦЫ ===== -->
+    <section class="pt-24 pb-12 bg-primary-light">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <h1 class="text-4xl font-bold text-gray-900 mb-3">Часто задаваемые вопросы</h1>
+            <p class="text-gray-500 text-lg">Не нашли ответ? <a href="contacts.html" class="text-primary hover:underline">Напишите нам</a></p>
+        </div>
+    </section>
+
+    <!-- ===== FAQ АККОРДЕОН ===== -->
+    <section class="py-16 bg-white">
+        <div class="max-w-3xl mx-auto px-4">
+
+            <!-- Категория: Заказы и доставка -->
+            <h2 class="text-lg font-bold text-gray-500 uppercase tracking-widest mb-5">Заказы и доставка</h2>
+
+            <div class="space-y-3 mb-10">
+
+                <div class="border border-gray-200 rounded-2xl overflow-hidden">
+                    <button onclick="toggleFaq(this)"
+                            class="w-full text-left flex justify-between items-center px-6 py-5 font-semibold text-gray-900 bg-white hover:bg-gray-50 transition-colors"
+                            aria-expanded="true">
+                        <span>Как сделать первый заказ?</span>
+                        <i class="fas fa-chevron-down text-primary transition-transform duration-300 rotate-180"></i>
+                    </button>
+                    <div class="faq-answer open px-6 pb-5 text-gray-600 text-sm leading-relaxed">
+                        Выберите программу питания на главной странице, нажмите кнопку «Выбрать»
+                        и заполните форму заказа: укажите имя, телефон и удобное время доставки.
+                        Менеджер перезвонит в течение 15 минут и уточнит детали.
+                    </div>
+                </div>
+
+                <div class="border border-gray-200 rounded-2xl overflow-hidden">
+                    <button onclick="toggleFaq(this)"
+                            class="w-full text-left flex justify-between items-center px-6 py-5 font-semibold text-gray-900 bg-white hover:bg-gray-50 transition-colors"
+                            aria-expanded="false">
+                        <span>Сколько стоит доставка?</span>
+                        <i class="fas fa-chevron-down text-primary transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-5 text-gray-600 text-sm leading-relaxed">
+                        Доставка бесплатна при заказе от 5 дней. При заказе на 1–4 дня стоимость
+                        доставки составляет 150 ₽ в пределах МКАД. За пределами МКАД — рассчитывается
+                        индивидуально.
+                    </div>
+                </div>
+
+                <div class="border border-gray-200 rounded-2xl overflow-hidden">
+                    <button onclick="toggleFaq(this)"
+                            class="w-full text-left flex justify-between items-center px-6 py-5 font-semibold text-gray-900 bg-white hover:bg-gray-50 transition-colors"
+                            aria-expanded="false">
+                        <span>В какое время привозят заказ?</span>
+                        <i class="fas fa-chevron-down text-primary transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-5 text-gray-600 text-sm leading-relaxed">
+                        Мы доставляем с 8:00 до 22:00, 7 дней в неделю. При оформлении заказа
+                        вы выбираете удобный двухчасовой интервал доставки. Курьер позвонит
+                        за 30 минут до приезда.
+                    </div>
+                </div>
+
+                <div class="border border-gray-200 rounded-2xl overflow-hidden">
+                    <button onclick="toggleFaq(this)"
+                            class="w-full text-left flex justify-between items-center px-6 py-5 font-semibold text-gray-900 bg-white hover:bg-gray-50 transition-colors"
+                            aria-expanded="false">
+                        <span>Можно ли перенести или отменить доставку?</span>
+                        <i class="fas fa-chevron-down text-primary transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-5 text-gray-600 text-sm leading-relaxed">
+                        Да. Перенести или отменить доставку можно не позднее чем за 18:00 накануне.
+                        Позвоните нам по номеру <a href="tel:+78001234567" class="text-primary hover:underline">8 800 123-45-67</a>
+                        или напишите в Telegram.
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Категория: Питание и состав -->
+            <h2 class="text-lg font-bold text-gray-500 uppercase tracking-widest mb-5">Питание и состав</h2>
+
+            <div class="space-y-3 mb-10">
+
+                <div class="border border-gray-200 rounded-2xl overflow-hidden">
+                    <button onclick="toggleFaq(this)"
+                            class="w-full text-left flex justify-between items-center px-6 py-5 font-semibold text-gray-900 bg-white hover:bg-gray-50 transition-colors"
+                            aria-expanded="false">
+                        <span>Подходит ли питание для людей с аллергией?</span>
+                        <i class="fas fa-chevron-down text-primary transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-5 text-gray-600 text-sm leading-relaxed">
+                        Да. При оформлении заказа укажите аллергены в комментарии к заказу,
+                        и наши повара исключат их из вашего рациона. Мы работаем без глютена,
+                        лактозы и других распространённых аллергенов — уточните детали у менеджера.
+                    </div>
+                </div>
+
+                <div class="border border-gray-200 rounded-2xl overflow-hidden">
+                    <button onclick="toggleFaq(this)"
+                            class="w-full text-left flex justify-between items-center px-6 py-5 font-semibold text-gray-900 bg-white hover:bg-gray-50 transition-colors"
+                            aria-expanded="false">
+                        <span>Вы используете только натуральные продукты?</span>
+                        <i class="fas fa-chevron-down text-primary transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-5 text-gray-600 text-sm leading-relaxed">
+                        Абсолютно. Мы работаем только с проверенными фермерскими хозяйствами.
+                        В наших блюдах нет консервантов, усилителей вкуса, красителей и ГМО.
+                        Состав каждого блюда указан на упаковке.
+                    </div>
+                </div>
+
+                <div class="border border-gray-200 rounded-2xl overflow-hidden">
+                    <button onclick="toggleFaq(this)"
+                            class="w-full text-left flex justify-between items-center px-6 py-5 font-semibold text-gray-900 bg-white hover:bg-gray-50 transition-colors"
+                            aria-expanded="false">
+                        <span>Как долго хранятся блюда?</span>
+                        <i class="fas fa-chevron-down text-primary transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-5 text-gray-600 text-sm leading-relaxed">
+                        Все блюда готовятся в день доставки. Срок хранения в холодильнике —
+                        24–48 часов. Суп и горячие блюда рекомендуем употребить в тот же день.
+                        Подробный срок хранения указан на каждом контейнере.
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Категория: Оплата -->
+            <h2 class="text-lg font-bold text-gray-500 uppercase tracking-widest mb-5">Оплата</h2>
+
+            <div class="space-y-3">
+
+                <div class="border border-gray-200 rounded-2xl overflow-hidden">
+                    <button onclick="toggleFaq(this)"
+                            class="w-full text-left flex justify-between items-center px-6 py-5 font-semibold text-gray-900 bg-white hover:bg-gray-50 transition-colors"
+                            aria-expanded="false">
+                        <span>Какие способы оплаты доступны?</span>
+                        <i class="fas fa-chevron-down text-primary transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-5 text-gray-600 text-sm leading-relaxed">
+                        Принимаем оплату картой онлайн, наличными или картой курьеру.
+                        Также доступна оплата через СБП (Систему быстрых платежей).
+                        Безналичная оплата с НДС — по запросу.
+                    </div>
+                </div>
+
+                <div class="border border-gray-200 rounded-2xl overflow-hidden">
+                    <button onclick="toggleFaq(this)"
+                            class="w-full text-left flex justify-between items-center px-6 py-5 font-semibold text-gray-900 bg-white hover:bg-gray-50 transition-colors"
+                            aria-expanded="false">
+                        <span>Есть ли скидки при длительной подписке?</span>
+                        <i class="fas fa-chevron-down text-primary transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-5 text-gray-600 text-sm leading-relaxed">
+                        Да! При заказе на 2 недели — скидка 5%, на месяц — скидка 10%.
+                        Для новых клиентов действует акция «Пробный день» по специальной цене.
+                        Следите за актуальными предложениями в нашем Telegram-канале.
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- CTA блок -->
+            <div class="mt-14 bg-primary-light rounded-2xl p-8 text-center">
+                <h3 class="text-xl font-bold text-gray-900 mb-2">Остались вопросы?</h3>
+                <p class="text-gray-500 mb-6">Наша поддержка ответит в течение нескольких минут</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="contacts.html"
+                       class="bg-primary hover:bg-primary-dark text-white font-semibold px-8 py-3 rounded-full transition-colors">
+                        Написать нам
+                    </a>
+                    <a href="tel:+78001234567"
+                       class="border border-primary text-primary hover:bg-primary hover:text-white font-semibold px-8 py-3 rounded-full transition-colors">
+                        <i class="fas fa-phone mr-2"></i>8 800 123-45-67
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ФУТЕР ===== -->
+    <footer class="bg-gray-900 text-gray-300 py-12">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
+                <div class="col-span-1 lg:col-span-2">
+                    <div class="flex items-center gap-2 text-white font-bold text-2xl mb-3">
+                        <i class="fas fa-leaf text-primary"></i>
+                        <span>FreshBox</span>
+                    </div>
+                    <p class="text-sm text-gray-400 max-w-xs">
+                        Сервис доставки здорового питания. Готовим с любовью, доставляем с заботой.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Навигация</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="index.html" class="hover:text-primary transition-colors">Главная</a></li>
+                        <li><a href="index.html#menu" class="hover:text-primary transition-colors">Меню</a></li>
+                        <li><a href="faq.html" class="hover:text-primary transition-colors">FAQ</a></li>
+                        <li><a href="contacts.html" class="hover:text-primary transition-colors">Контакты</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Контакты</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex items-center gap-2">
+                            <i class="fas fa-phone text-primary"></i>
+                            <a href="tel:+78001234567" class="hover:text-primary transition-colors">8 800 123-45-67</a>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fas fa-envelope text-primary"></i>
+                            <a href="mailto:hello@freshbox.ru" class="hover:text-primary transition-colors">hello@freshbox.ru</a>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fas fa-location-dot text-primary"></i>
+                            <span>Москва, ул. Здоровая, 1</span>
+                        </li>
+                    </ul>
+                    <div class="flex gap-4 mt-5">
+                        <a href="#" class="text-gray-400 hover:text-primary text-xl transition-colors" aria-label="ВКонтакте"><i class="fab fa-vk"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-primary text-xl transition-colors" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-primary text-xl transition-colors" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-primary text-xl transition-colors" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 pt-6 text-center text-xs text-gray-500">
+                &copy; 2026 FreshBox. Все права защищены.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Бургер-меню
+        const burger = document.getElementById('burger');
+        const mobileMenu = document.getElementById('mobile-menu');
+        burger.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+        });
+
+        // Аккордеон FAQ
+        function toggleFaq(btn) {
+            const answer = btn.nextElementSibling;
+            const icon = btn.querySelector('i');
+            const isOpen = answer.classList.contains('open');
+
+            // Закрыть все открытые
+            document.querySelectorAll('.faq-answer.open').forEach(el => {
+                el.classList.remove('open');
+                el.previousElementSibling.querySelector('i').classList.remove('rotate-180');
+                el.previousElementSibling.setAttribute('aria-expanded', 'false');
+            });
+
+            // Открыть текущий (если был закрыт)
+            if (!isOpen) {
+                answer.classList.add('open');
+                icon.classList.add('rotate-180');
+                btn.setAttribute('aria-expanded', 'true');
+            }
+        }
+    </script>
+</body>
+</html>

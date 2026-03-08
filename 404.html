@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Страница не найдена — FreshBox</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4caf50',
+                        'primary-dark': '#388e3c',
+                        'primary-light': '#e8f5e9',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50%       { transform: translateY(-16px); }
+        }
+        .float { animation: float 3s ease-in-out infinite; }
+    </style>
+</head>
+<body class="font-sans text-gray-800 bg-primary-light min-h-screen flex flex-col">
+
+    <!-- ===== ХЕДЕР ===== -->
+    <header class="bg-white shadow-md">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-2 text-primary font-bold text-2xl">
+                <i class="fas fa-leaf"></i>
+                <span>FreshBox</span>
+            </a>
+
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-600">
+                <a href="index.html" class="hover:text-primary transition-colors">Главная</a>
+                <a href="index.html#menu" class="hover:text-primary transition-colors">Меню</a>
+                <a href="faq.html" class="hover:text-primary transition-colors">FAQ</a>
+                <a href="contacts.html" class="hover:text-primary transition-colors">Контакты</a>
+            </nav>
+
+            <a href="index.html#order"
+               class="hidden md:inline-block bg-primary hover:bg-primary-dark text-white font-semibold px-5 py-2 rounded-full transition-colors">
+                Заказать
+            </a>
+        </div>
+    </header>
+
+    <!-- ===== 404 КОНТЕНТ ===== -->
+    <main class="flex-1 flex items-center justify-center px-4 py-16">
+        <div class="text-center max-w-lg">
+
+            <!-- Анимированная иконка -->
+            <div class="float text-primary mb-6">
+                <i class="fas fa-bowl-food text-8xl"></i>
+            </div>
+
+            <!-- Код ошибки -->
+            <h1 class="text-9xl font-bold text-primary leading-none mb-4">404</h1>
+
+            <!-- Заголовок -->
+            <h2 class="text-2xl font-bold text-gray-900 mb-3">Упс! Страница не найдена</h2>
+
+            <!-- Описание -->
+            <p class="text-gray-500 mb-8">
+                Похоже, эта страница куда-то убежала — как наш курьер с заказом.
+                Проверьте адрес или вернитесь на главную.
+            </p>
+
+            <!-- Кнопки -->
+            <div class="flex flex-col sm:flex-row gap-4 justify-center mb-10">
+                <a href="index.html"
+                   class="bg-primary hover:bg-primary-dark text-white font-semibold px-8 py-3 rounded-full transition-colors">
+                    <i class="fas fa-house mr-2"></i>На главную
+                </a>
+                <a href="contacts.html"
+                   class="border border-primary text-primary hover:bg-primary hover:text-white font-semibold px-8 py-3 rounded-full transition-colors">
+                    <i class="fas fa-envelope mr-2"></i>Написать нам
+                </a>
+            </div>
+
+            <!-- Навигация -->
+            <div class="bg-white rounded-2xl shadow p-6">
+                <p class="text-gray-500 text-sm mb-4 font-medium">Или перейдите в нужный раздел:</p>
+                <nav class="flex flex-wrap justify-center gap-3">
+                    <a href="index.html"
+                       class="bg-primary-light text-primary hover:bg-primary hover:text-white font-semibold px-5 py-2 rounded-full text-sm transition-colors">
+                        Главная
+                    </a>
+                    <a href="index.html#menu"
+                       class="bg-primary-light text-primary hover:bg-primary hover:text-white font-semibold px-5 py-2 rounded-full text-sm transition-colors">
+                        Меню
+                    </a>
+                    <a href="faq.html"
+                       class="bg-primary-light text-primary hover:bg-primary hover:text-white font-semibold px-5 py-2 rounded-full text-sm transition-colors">
+                        FAQ
+                    </a>
+                    <a href="contacts.html"
+                       class="bg-primary-light text-primary hover:bg-primary hover:text-white font-semibold px-5 py-2 rounded-full text-sm transition-colors">
+                        Контакты
+                    </a>
+                    <a href="index.html#order"
+                       class="bg-primary-light text-primary hover:bg-primary hover:text-white font-semibold px-5 py-2 rounded-full text-sm transition-colors">
+                        Заказать
+                    </a>
+                </nav>
+            </div>
+        </div>
+    </main>
+
+    <!-- ===== ФУТЕР ===== -->
+    <footer class="bg-gray-900 text-gray-300 py-12">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
+                <div class="col-span-1 lg:col-span-2">
+                    <div class="flex items-center gap-2 text-white font-bold text-2xl mb-3">
+                        <i class="fas fa-leaf text-primary"></i>
+                        <span>FreshBox</span>
+                    </div>
+                    <p class="text-sm text-gray-400 max-w-xs">
+                        Сервис доставки здорового питания. Готовим с любовью, доставляем с заботой.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Навигация</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="index.html" class="hover:text-primary transition-colors">Главная</a></li>
+                        <li><a href="index.html#menu" class="hover:text-primary transition-colors">Меню</a></li>
+                        <li><a href="faq.html" class="hover:text-primary transition-colors">FAQ</a></li>
+                        <li><a href="contacts.html" class="hover:text-primary transition-colors">Контакты</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Контакты</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex items-center gap-2">
+                            <i class="fas fa-phone text-primary"></i>
+                            <a href="tel:+78001234567" class="hover:text-primary transition-colors">8 800 123-45-67</a>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fas fa-envelope text-primary"></i>
+                            <a href="mailto:hello@freshbox.ru" class="hover:text-primary transition-colors">hello@freshbox.ru</a>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fas fa-location-dot text-primary"></i>
+                            <span>Москва, ул. Здоровая, 1</span>
+                        </li>
+                    </ul>
+                    <div class="flex gap-4 mt-5">
+                        <a href="#" class="text-gray-400 hover:text-primary text-xl transition-colors" aria-label="ВКонтакте"><i class="fab fa-vk"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-primary text-xl transition-colors" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-primary text-xl transition-colors" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-primary text-xl transition-colors" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 pt-6 text-center text-xs text-gray-500">
+                &copy; 2026 FreshBox. Все права защищены.
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
